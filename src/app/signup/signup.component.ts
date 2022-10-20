@@ -1,34 +1,45 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormBuilder} from '@angular/forms'
-import { Router } from '@angular/router';
+import {FormBuilder,FormGroup} from '@angular/forms' ;
+import { ApiService } from '../service/api.service';
+import { Usermodel } from './signup.user.model';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
-  public signupForm !: FormGroup;
-
-  constructor(private formBuilder :FormBuilder,private http :HttpClient,private router : Router) { }
+export class SignupComponent implements OnInit { 
+  signupForm !: FormGroup;
+  userModelObj :Usermodel = new Usermodel();
+  
+ 
+  constructor(private formbuilder: FormBuilder,
+    private api : ApiService) { }
 
   ngOnInit(): void {
-    this.signupForm = this.formBuilder.group({
-      fullname:[''],
-      email:[''],
-      password:['']
-
+    this.signupForm = this.formbuilder.group({
+      fullname :[''],
+      email :[''],
+      password :['']
+     
     })
+    
   }
+ 
   signUp(){
-    this.http.post<any>("http://localhost:3000/signupUsers",this.signupForm.value).
-    subscribe(res =>{
-      alert("Regitered Succesfully");
-      this.signupForm.reset();
-      this.router.navigate(['login']);
+    this.userModelObj.fullname = this.signupForm.value.firstName;
+    this.userModelObj.email = this.signupForm.value.email;
+    this.userModelObj.password = this.signupForm.value.password;
+
+    this.api.postUser(this.userModelObj)
+    .subscribe(res=>{
+      console.log(res);
+      alert(" Succesfully Registered")
+      
+      
+      
     })
-
+   
+  
   }
-
 }
