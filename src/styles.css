@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    
+    background-color:  hsla(205, 46%, 30%, 1);
+    background-color: linear-gradient(90deg,hsla(205,46%,30%,1) 0%,hsla(260,29%,36%,1) 100%);
+}
