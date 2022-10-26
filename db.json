@@ -1,60 +1,92 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "email": "mubarak@gmail.com",
+      "password": "mubu",
+      "id": 1
     },
     {
-      "email": "mubarak@gmail.com",
-      "password": "mnbvfg",
+      "email": "arshad@gmail.com",
+      "password": "arshu",
       "id": 2
     },
     {
-      "email": "mubarak@gmail.com",
-      "password": "mnbvfg",
+      "email": "arshad@gmail.com",
+      "password": "arshu",
       "id": 3
+    },
+    {
+      "email": "arshad@gmail.com",
+      "password": "arshu",
+      "id": 4
+    },
+    {
+      "email": "arshad@gmail.com",
+      "password": "arshu",
+      "id": 5
+    },
+    {
+      "email": "arshad@gmail.com",
+      "password": "arshu",
+      "id": 6
+    },
+    {
+      "email": "arshad@gmail.com",
+      "password": "arshu",
+      "id": 7
+    },
+    {
+      "email": "arshad@gmail.com",
+      "password": "arshu",
+      "id": 8
     }
   ],
   "signupUsers": [
     {
       "fullname": "mubarak",
-      "email": "jshfiwueh@gmail.com",
-      "password": "sbfbfwbf",
+      "email": "mubarak@gmail.com",
+      "password": "mubu",
       "id": 1
     },
     {
-      "fullname": "sahil",
-      "email": "ijwbfuibfukib",
-      "password": "jbdwlifblwebfiu",
+      "email": "arshad@gmail.com",
+      "password": "arshu",
       "id": 2
-    },
-    {
-      "fullname": "jdjkerjk;n;",
-      "email": "hjbdhbi",
-      "password": "hbhlbukjlblkb",
-      "id": 3
-    },
-    {
-      "fullname": "iflbweiul",
-      "email": "ibhui",
-      "password": "iub",
-      "id": 4
-    },
-    {
-      "fullname": "muvudu",
-      "email": "hlguilghui",
-      "password": "jkuhuhn",
-      "id": 5
-    },
-    {
-      "fullname": null,
-      "email": null,
-      "password": null,
-      "id": 6
     }
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "blogs": [
+    {
+      "tittle": "mubarak",
+      "description": "mubarak@gmail.com",
+      "content": "mubu",
+      "id": 1
+    },
+    {
+      "title": "fnjknn",
+      "description": "kjnjniu",
+      "content": "ijnuinbiubkin\n",
+      "id": 2
+    },
+    {
+      "title": "erjnejkn",
+      "description": "kjnkjlnl",
+      "content": "kjnjkninkn",
+      "id": 3
+    },
+    {
+      "title": "sdcds",
+      "description": "hjbkjbk",
+      "content": "bjkbkjb",
+      "id": 4
+    },
+    {
+      "title": "fthrth",
+      "description": "dbrfbr",
+      "content": "brfbrbnrfn",
+      "id": 5
+    }
+  ]
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup} from '@angular/forms' ;
 import { ApiService } from '../service/api.service';
 import { Loginmodel } from './login.user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   
  
   constructor(private formbuilder: FormBuilder,
-    private api : ApiService) { }
+    private api : ApiService,private router:Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formbuilder.group({
@@ -35,7 +36,8 @@ export class LoginComponent implements OnInit {
     this.api.loginUser(this.loginModelObj)
     .subscribe(res=>{
       console.log(res);
-      alert(" Succesfully Registered")
+      alert("Login Succesfull");
+      this.router.navigate(['dashboard/home'])
       
       
       

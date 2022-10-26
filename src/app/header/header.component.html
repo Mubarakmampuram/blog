@@ -1,1 +1,65 @@
-<p>header works!</p>
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue ;">MyBlog</h1>
+        <div class="d-flex">
+            <!-- Button trigger modal -->
+<button type="button" 
+ class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Create Post
+  </button>
+  <button class="btn btn-primary" routerLink="/dashboard/home">Home</button>
+
+  <button class="btn btn-primary" routerLink="/dashboard/profile">Profile</button>
+
+  <button class="btn btn-primary" routerLink="/login">Logout</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Create Your Own Blog</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup] = "createBlogForm" >
+               
+                <div class="mb-3">
+                  <label  class="form-label">Blog Tittle</label>
+                  <input type="text" formControlName = "title" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Description</label>
+                    <input type="text" formControlName = "description" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Fill Your Content Below!</label>
+                    <textarea formControlName = "content" cols="30" rows="25"></textarea>
+                </div>
+               
+             </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit"  (click) = "addBlog()" class="btn btn-primary">Add</button>
+         
+
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+    </div>
+</nav>
+<div class="container" *ngFor = "let row of blogData">
+    <div class="card-header">
+        Author Name
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"> {{row.title}} </h5>
+        <p class="card-text">{{row.description}}.</p>
+        <a routerLink = "/dashboard/post" class="btn btn-primary">Read Full Article</a>
+      </div>
+      <div class="card-header">
+       
+</div>

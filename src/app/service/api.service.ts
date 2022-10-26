@@ -8,12 +8,19 @@ export class ApiService {
 
   constructor(private http : HttpClient) { }
   registerUser(data : any){
-    return this.http.post<any>("http://localhost:3000/register",data)
+    return this.http.post<any>("http://localhost:3000/signupUsers",data)
    
   }
 
   loginUser(data:any){
-    return this.http.post<any>("http://localhost:3000/login",data)
+    return this.http.post<any>("http://localhost:3000/posts",data)
+  }
+  createNewPost(data:any){
+    return this.http.post<any>("http://localhost:3000/blogs",data)
+  }
+  getPosts(){
+    return this.http.get<any>("http://localhost:3000/blogs")
+    
   }
 
   

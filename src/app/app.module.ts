@@ -12,8 +12,6 @@ import { LoginComponent } from './login/login.component';
 import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
 import { DisplayPostComponent } from './display-post/display-post.component';
 
 @NgModule({
@@ -24,8 +22,8 @@ import { DisplayPostComponent } from './display-post/display-post.component';
     AppDashboardComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    ProfileComponent,
+    
+    
     DisplayPostComponent
   ],
   imports: [
