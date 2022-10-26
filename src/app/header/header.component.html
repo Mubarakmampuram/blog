@@ -34,7 +34,7 @@
                 </div>
                 <div class="mb-3">
                     <label  class="form-label">Fill Your Content Below!</label>
-                    <textarea formControlName = "content" cols="30" rows="25"></textarea>
+                    <textarea formControlName = "content" cols="45" rows="25"></textarea>
                 </div>
                
              </form>
@@ -51,15 +51,17 @@
         </div>
     </div>
 </nav>
-<div class="container" *ngFor = "let row of blogData">
-    <div class="card-header">
-        Author Name
-      </div>
-      <div class="card-body">
-        <h5 class="card-title"> {{row.title}} </h5>
-        <p class="card-text">{{row.description}}.</p>
-        <a routerLink = "/dashboard/post" class="btn btn-primary">Read Full Article</a>
-      </div>
-      <div class="card-header">
-       
+<div class="main">
+    <div class="container" *ngFor = "let row of blogData">
+        <div class="card-header">
+            Author Name
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{row.title}} </h5>
+            <p class="card-text">{{row.description}}.</p>
+            <a routerLink = "/dashboard/post" class="btn btn-primary">Read Full Article</a>
+          </div>
+          <div class="card-header">
+           
+    </div>
 </div>

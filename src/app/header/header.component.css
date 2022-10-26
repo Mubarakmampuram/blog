@@ -1,4 +1,6 @@
-.navba{
-    display: flex;
-    justify-content: space-around;
+.main{
+    margin-top: 20px;
+}
+.container{
+    margin-top: 50px;
 }
