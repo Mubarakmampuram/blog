@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   formvalue !:FormGroup
+  showAdd !: boolean;
+  showUpdate !: boolean; 
 
   createBlogForm !: FormGroup;
   blogData !:any;
@@ -36,7 +38,7 @@ export class HeaderComponent implements OnInit {
       alert(" Succesfully Added");
       let ref = document.getElementById("cancel")
       ref?.click();
-      this.formvalue.reset();
+      this.createBlogForm.reset();
       this.getAllBlogs();
       
       
@@ -49,6 +51,45 @@ export class HeaderComponent implements OnInit {
     .subscribe(res => {
       this.blogData = res ;
     })
+  }
+  onEdit(row:any){
+    this.showAdd = false;
+    this.showUpdate = true;
+    this.blogModelObj.id = row.id; 
+    this.createBlogForm.controls['title'].setValue(row.title)
+    this.createBlogForm.controls['description'].setValue(row.description)
+    this.createBlogForm.controls['content'].setValue(row.content)
+
+    
+  }
+  deleteBlog(row:any){
+    this.api.deletePosts(row.id)
+    .subscribe(res => {
+      console.log(res);
+      alert("Blog Deleted");
+      this.getAllBlogs();
+    })
+  }
+  clickCreatePost(){
+    this.createBlogForm.reset();
+    this.showAdd = true;
+    this.showUpdate = false;
+  }
+  updateBlog(){
+    this.blogModelObj.title = this.createBlogForm.value.title;
+    this.blogModelObj.description = this.createBlogForm.value.description;
+    this.blogModelObj.content = this.createBlogForm.value.content;
+   
+    this.api.updatePosts(this.blogModelObj,this.blogModelObj.id)
+    .subscribe(res => {
+      alert("Updated Succesfully");
+
+      let ref = document.getElementById("cancel")
+      ref?.click();
+      this.createBlogForm.reset();
+      this.getAllBlogs();
+    })
+
   }
 
 }

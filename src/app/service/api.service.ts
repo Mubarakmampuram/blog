@@ -21,6 +21,15 @@ export class ApiService {
   getPosts(){
     return this.http.get<any>("http://localhost:3000/blogs")
     
+    
+  }
+  updatePosts(data :any,id: number){
+    return this.http.put<any>("http://localhost:3000/blogs/"+id,data)
+    
+  }
+  deletePosts(id : number){
+    return this.http.delete<any>("http://localhost:3000/blogs/"+id)
+    
   }
 
   

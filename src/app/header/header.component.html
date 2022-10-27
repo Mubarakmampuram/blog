@@ -4,7 +4,7 @@
         <div class="d-flex">
             <!-- Button trigger modal -->
 <button type="button" 
- class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+ class="btn btn-primary" (click)="clickCreatePost()" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Create Post
   </button>
   <button class="btn btn-primary" routerLink="/dashboard/home">Home</button>
@@ -41,7 +41,9 @@
         </div>
         <div class="modal-footer">
           <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit"  (click) = "addBlog()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf = "showAdd" (click) = "addBlog()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf = "showUpdate" (click) = "updateBlog()" class="btn btn-primary">Update</button>
+
          
 
         </div>
@@ -53,6 +55,7 @@
 </nav>
 <div class="main">
     <div class="container" *ngFor="let row of blogData">
+       
         <div class="title">
             <h4>{{row.title}}</h4>
         </div>
@@ -68,15 +71,19 @@
             </p>
             
         </div>
-       
         <div class="actions">
             <table>
                 <tr class="buttons">
-                    <td><button class="btn btn-primary">Edit Post</button></td>
-                    <td><button class="btn btn-danger">Delete</button></td>
+                    <td>               
+                         <button class="btn btn-info" (click) = "onEdit(row)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                         Edit 
+                         </button>
+                    </td>
+                    <td><button class="btn btn-danger" (click) = " deleteBlog(row)" >Delete</button></td>
                 </tr>
             </table>
         </div>
+        
         <hr>
     </div>
    
