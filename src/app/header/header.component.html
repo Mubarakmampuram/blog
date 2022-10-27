@@ -52,16 +52,33 @@
     </div>
 </nav>
 <div class="main">
-    <div class="container" *ngFor = "let row of blogData">
-        <div class="card-header">
-            Author Name
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"> {{row.title}} </h5>
-            <p class="card-text">{{row.description}}.</p>
-            <a routerLink = "/dashboard/post" class="btn btn-primary">Read Full Article</a>
-          </div>
-          <div class="card-header">
-           
+    <div class="container" *ngFor="let row of blogData">
+        <div class="title">
+            <h4>{{row.title}}</h4>
+        </div>
+        <div class="description">
+            <h6>
+                {{row.description}}
+            </h6>
+
+        </div>
+        <div class="content">
+            <p>
+                {{row.content}}
+            </p>
+            
+        </div>
+       
+        <div class="actions">
+            <table>
+                <tr class="buttons">
+                    <td><button class="btn btn-primary">Edit Post</button></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                </tr>
+            </table>
+        </div>
+        <hr>
     </div>
+   
+    
 </div>
